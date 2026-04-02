@@ -1,0 +1,42 @@
+server:
+  port: ${OPENCLAW_PORT:18789}
+
+spring:
+  application:
+    name: openclaw
+
+logging:
+  level:
+    com.openclaw: INFO
+    org.springframework.ai: INFO
+
+# OpenClaw gateway configuration (bound to OpenClawConfig via @ConfigurationProperties)
+openclaw:
+  gateway:
+    port: 18789
+    host: 0.0.0.0
+    auth:
+      mode: token
+      token: ${OPENCLAW_TOKEN:}
+  agents:
+    main:
+      model: gpt-4o
+      system-prompt: "You are a helpful assistant."
+      max-tokens: 4096
+      temperature: 0.7
+  channels:
+    telegram:
+      accounts:
+        my-bot:
+          token: ${TELEGRAM_BOT_TOKEN:}
+          allow-from: ["123456789"]
+          dm-policy: allowlist
+  models:
+    gpt-4o:
+      provider: openai
+      api-key: ${OPENAI_API_KEY:}
+      model-name: gpt-4o
+  bindings:
+    - channel: telegram
+      account-id: my-bot
+      agent-id: main
