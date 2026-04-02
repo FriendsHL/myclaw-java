@@ -40,6 +40,18 @@
             <artifactId>openclaw-provider-openai</artifactId>
             <version>${project.version}</version>
         </dependency>
+        <dependency>
+            <groupId>com.openclaw</groupId>
+            <artifactId>openclaw-provider-anthropic</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <!-- Channel plugins - Feishu -->
+        <dependency>
+            <groupId>com.openclaw</groupId>
+            <artifactId>openclaw-channel-feishu</artifactId>
+            <version>${project.version}</version>
+        </dependency>
 
         <!-- Test -->
         <dependency>

@@ -31,11 +31,21 @@ openclaw:
           token: ${TELEGRAM_BOT_TOKEN:}
           allow-from: ["123456789"]
           dm-policy: allowlist
+    feishu:
+      accounts:
+        my-bot:
+          appId: ${FEISHU_APP_ID:}
+          appSecret: ${FEISHU_APP_SECRET:}
+          verificationToken: ${FEISHU_VERIFICATION_TOKEN:}
   models:
     gpt-4o:
       provider: openai
       api-key: ${OPENAI_API_KEY:}
       model-name: gpt-4o
+    claude-sonnet:
+      provider: anthropic
+      api-key: ${ANTHROPIC_API_KEY:}
+      model-name: claude-sonnet-4-6
   bindings:
     - channel: telegram
       account-id: my-bot

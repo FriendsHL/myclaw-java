@@ -25,7 +25,9 @@
         <module>openclaw-app</module>
         <!-- Extension modules -->
         <module>extensions/openclaw-channel-telegram</module>
+        <module>extensions/openclaw-channel-feishu</module>
         <module>extensions/openclaw-provider-openai</module>
+        <module>extensions/openclaw-provider-anthropic</module>
     </modules>
 
     <properties>
